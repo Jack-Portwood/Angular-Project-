@@ -1,0 +1,67 @@
+
+<!-- <ul *ngFor= "let person of listData">
+    <li>{{person.email}}
+        <span>{{person.first_name}}</span>
+    </li>
+</ul> -->
+
+<nz-table #basicTable [nzData]="listOfData">
+    <thead>
+        
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of basicTable.data">
+            <td>{{data.first_name}}</td>
+            <td>{{data.last_name}}</td>
+            <td>{{data.email}}</td>
+            <td>{{data.gender}}</td>
+            <td>{{data.employed}}</td>
+            
+        </tr>
+    </tbody>
+</nz-table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <nz-table #basicTable [nzData]="listOfData">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Gender</th>
+            <th>Employed</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of basicTable.listOfData">
+            <td>{{person.first_name}}</td>
+            <td>{{person.last_name}}</td>
+            <td>{{person.email}}</td>
+            <td>{{person.gender}}</td>
+            <td>{{person.employed}}</td>
+            <td>
+                <a>Action 一 {{data.name}}</a>
+                <nz-divider nzType="vertical"></nz-divider>
+                <a>Delete</a>
+            </td>
+        </tr>
+    </tbody>
+</nz-table> -->
