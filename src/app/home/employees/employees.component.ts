@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { API, graphqlOperation } from 'aws-amplify';
+import * as queries from '../../../graphql/queries';
 
 @Component({
   selector: 'app-employees',
@@ -10,6 +12,10 @@ export class EmployeesComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
+    const allTodos = API.graphql(graphqlOperation(queries.listTodos));
+    console.log("Hello",allTodos);
   }
+  
 
 }
