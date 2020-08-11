@@ -20,11 +20,10 @@ import { IconDefinition } from '@ant-design/icons-angular';
 import * as AllIcons from '@ant-design/icons-angular/icons';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { NgZorroModule } from './ng-zorro.module';
-import Amplify from 'aws-amplify';
-// import awsconfig from './aws-exports';
+
 import { AmplifyUIAngularModule } from '@aws-amplify/ui-angular';
 
-// Amplify.configure(awsconfig);
+
 
 registerLocaleData(uk);
 

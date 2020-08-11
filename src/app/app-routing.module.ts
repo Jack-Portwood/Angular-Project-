@@ -6,23 +6,27 @@ import { EmployeesComponent } from './home/employees/employees.component';
 import { AuthGuard } from './auth/auth.guard';
 import { AuthComponent } from './auth/auth.component'
 const routes: Routes = [
-  { path: 'auth', component: AuthComponent },
+  
+  { path: 'login', component: AuthComponent },
+
   {
     path: 'home',
     component: HomeComponent,
     children: [
       {
         path: 'customers',
-        component: CustomersComponent, canActivate: [AuthGuard]
+        component: CustomersComponent,
+        canActivate: [AuthGuard],
       },
       {
         path: 'employees',
-        component: EmployeesComponent, canActivate: [AuthGuard]
-      }
+        component: EmployeesComponent,
+        canActivate: [AuthGuard],
+      },
     ],
   },
-  { path: "", redirectTo: "/home", pathMatch: "full" },
-  { path: "**", component: HomeComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '**', component: HomeComponent },
 ];
 
 @NgModule({
