@@ -6,6 +6,7 @@ import { environment } from './environments/environment';
 
 import Amplify from 'aws-amplify';
 import awsconfig from './aws-exports';
+import { API, graphqlOperation } from 'aws-amplify';
 
 Amplify.configure(awsconfig);
 

@@ -11,7 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { uk_UA } from 'ng-zorro-antd/i18n';
-import { registerLocaleData } from '@angular/common';
+import { registerLocaleData, CommonModule } from '@angular/common';
 import uk from '@angular/common/locales/uk';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 
@@ -22,7 +22,6 @@ import { NzTableModule } from 'ng-zorro-antd/table';
 import { NgZorroModule } from './ng-zorro.module';
 
 import { AmplifyUIAngularModule } from '@aws-amplify/ui-angular';
-
 
 
 registerLocaleData(uk);
@@ -41,7 +40,7 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(
     HomeComponent,
     AuthComponent,
     CustomersComponent,
-    EmployeesComponent
+    EmployeesComponent,
   ],
   imports: [
     BrowserModule,

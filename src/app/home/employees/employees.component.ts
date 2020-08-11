@@ -13,8 +13,9 @@ export class EmployeesComponent implements OnInit {
 
   ngOnInit(): void {
 
-    const allTodos = API.graphql(graphqlOperation(queries.listTodos));
-    console.log("Hello",allTodos);
+    // Simple query
+  const allTodos = API.graphql(graphqlOperation(queries.listTodos));
+  console.log("all good Logs",allTodos);
   }
   
 
