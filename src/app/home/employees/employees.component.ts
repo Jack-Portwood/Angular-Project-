@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { API, graphqlOperation } from 'aws-amplify';
 import * as queries from '../../../graphql/queries';
+import * as mutations from '../../../graphql/mutations';
+import * as subscriptions from '../../../graphql/subscriptions'
+
+
+  const todo = { name: 'Hello world', description: 'Info' };
+
 
 @Component({
   selector: 'app-employees',
@@ -9,14 +15,31 @@ import * as queries from '../../../graphql/queries';
 })
 export class EmployeesComponent implements OnInit {
 
+  
+
   constructor() { }
+
+  allTodos: any = []
 
   ngOnInit(): void {
 
     // Simple query
-  const allTodos = API.graphql(graphqlOperation(queries.listTodos));
-  console.log("all good Logs",allTodos);
+    this.getAll()
+  };
+
+  async getAll(){
+    const allTodos = await API.graphql(graphqlOperation(queries.listTodos));
+    this.allTodos = allTodos.data.listTodos.items
+    console.log(this.allTodos);
+  }
+
+  //create ToDo
+  async createTodo(){
+    
+   await API.graphql(graphqlOperation(mutations.createTodo, { input: todo }));
+
   }
   
+  } 
 
-}
+

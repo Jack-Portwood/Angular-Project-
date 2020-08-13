@@ -22,6 +22,7 @@ import { NzTableModule } from 'ng-zorro-antd/table';
 import { NgZorroModule } from './ng-zorro.module';
 
 import { AmplifyUIAngularModule } from '@aws-amplify/ui-angular';
+import { NzButtonModule } from 'ng-zorro-antd/button';
 
 
 registerLocaleData(uk);
@@ -51,7 +52,8 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(
     NzLayoutModule,
     NzTableModule,
     NgZorroModule,
-    AmplifyUIAngularModule
+    AmplifyUIAngularModule,
+    NzButtonModule
     
   ],
   providers: [{ provide: NZ_I18N, useValue: uk_UA }, { provide: NZ_ICONS, useValue: icons }  ],
