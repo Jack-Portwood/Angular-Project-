@@ -16,7 +16,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let data of editRowTable.allTodos" class="editable-row">
+        <tr *ngFor="let data of editRowTable.data" class="editable-row">
             <td>
                 <div class="editable-cell" [hidden]="editId === data.id" (click)="startEdit(data.id)">
                     {{ data.name }}
