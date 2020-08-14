@@ -30,7 +30,7 @@ export class EmployeesComponent implements OnInit {
   async getAll(){
     const allTodos = await API.graphql(graphqlOperation(queries.listTodos));
     this.allTodos = allTodos.data.listTodos.items
-    console.log(this.allTodos);
+    console.log("Data",this.allTodos);
   }
 
   //create ToDo
