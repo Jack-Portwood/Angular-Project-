@@ -1,7 +1,4 @@
 
-
-
-
 <br />
 <button nz-button (click)="createTodo()" nzType="primary">Create ToDo</button>
 <br />
@@ -26,7 +23,7 @@
             <td>{{ data.description }}</td>
             <td>{{ data.address }}</td>
             <td>
-                <a nz-popconfirm nzPopconfirmTitle="Sure to delete?" (nzOnConfirm)="deleteRow(data.id)">Delete</a>
+                <button (click)="deleteTodo()" (nzOnConfirm)="deleteRow(data.id)">Delete</button>
             </td>
         </tr>
     </tbody>

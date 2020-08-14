@@ -39,6 +39,12 @@ export class EmployeesComponent implements OnInit {
    await API.graphql(graphqlOperation(mutations.createTodo, { input: todo }));
 
   }
+
+  //Delete ToDo
+  // async deleteTodo(){
+
+  //   await API.graphql(graphqlOperation(mutations.deleteTodo, { input:  todo  }));
+  // }
   
   } 
 

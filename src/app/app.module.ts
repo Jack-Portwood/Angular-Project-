@@ -54,7 +54,7 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(
     NgZorroModule,
     AmplifyUIAngularModule,
     NzButtonModule
-    
+   
   ],
   providers: [{ provide: NZ_I18N, useValue: uk_UA }, { provide: NZ_ICONS, useValue: icons }  ],
   bootstrap: [AppComponent]

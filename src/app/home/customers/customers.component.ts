@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import  data  from '../../../assets/mock_data.json';
+import { NzTableFilterFn, NzTableFilterList,NzTableSortFn,NzTableSortOrder} from '../../ng-zorro.module';
 
 interface DataItem {
   id:number;
@@ -10,25 +11,47 @@ interface DataItem {
   employed: boolean;
 }
 
+interface ColumnItem {
+  name: string;
+  sortOrder?: NzTableSortOrder;
+  sortFn?: NzTableSortFn;
+  listOfFilter?: NzTableFilterList;
+  filterFn?: NzTableFilterFn;
+  filterMultiple?: boolean;
+  sortDirections?: NzTableSortOrder[];
+}
+
 
 @Component({
-  selector: 'app-customers', 
+  selector: 'app-customers',
   templateUrl: './customers.component.html',
-  styleUrls: ['./customers.component.scss']
+  styleUrls: ['./customers.component.scss'],
 })
 export class CustomersComponent implements OnInit {
-
   // listData: any;
   listOfData: DataItem[];
- 
+  listData: any;
+  listOfColumns: ColumnItem[] = [
+    {
+      name: 'First Name',
+      sortOrder: null,
+      sortFn: (a: DataItem, b: DataItem) =>
+        a.first_name.localeCompare(b.first_name),
+      filterMultiple: false,
+    },
+    {
+      name: 'Last Name',
+      sortOrder: null,
+      sortFn: (a: DataItem, b: DataItem) =>
+        a.last_name.localeCompare(b.last_name),
+      filterMultiple: true,
+    },
+  ];
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
-
-    // this.listData = data;
-    this.listOfData = data;
-
+    this.listData=data;
+    this.listOfData=data;
   }
-
-}
+  }
